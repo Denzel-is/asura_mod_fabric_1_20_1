@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "IRI",
+        "I I"
+    ],
+    "key": {
+        "I": {
+            "item": "asura_mod:runic_iron_ingot"
+        },
+        "R": {
+            "item": "asura_mod:rune_dust"
+        }
+    },
+    "result": {
+        "item": "asura_mod:runic_helmet",
+        "count": 1
+    }
+}

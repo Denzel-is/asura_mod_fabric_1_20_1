@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " Q ",
+        "ISI",
+        " S "
+    ],
+    "key": {
+        "Q": {
+            "item": "asura_mod:aether_quartz_shard"
+        },
+        "I": {
+            "item": "asura_mod:runic_iron_ingot"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "asura_mod:runic_blade",
+        "count": 1
+    }
+}

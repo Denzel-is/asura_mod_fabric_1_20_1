@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "V",
+        "S"
+    ],
+    "key": {
+        "V": {
+            "item": "asura_mod:void_salt"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "asura_mod:void_salt_dagger",
+        "count": 1
+    }
+}

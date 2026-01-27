@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CRC",
+        "PHP",
+        "P P"
+    ],
+    "key": {
+        "C": {
+            "item": "asura_mod:cinder_opal"
+        },
+        "R": {
+            "item": "asura_mod:runic_plate"
+        },
+        "P": {
+            "item": "minecraft:phantom_membrane"
+        },
+        "H": {
+            "item": "asura_mod:heat_treated_core"
+        }
+    },
+    "result": {
+        "item": "asura_mod:cinder_mantle",
+        "count": 1
+    }
+}

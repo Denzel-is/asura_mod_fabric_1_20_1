@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "template": {
+        "item": "asura_mod:cinder_upgrade_template"
+    },
+    "base": {
+        "item": "asura_mod:runic_pickaxe"
+    },
+    "addition": {
+        "item": "asura_mod:cinder_opal"
+    },
+    "result": {
+        "item": "asura_mod:cinder_pickaxe"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SQS",
+        "LPL",
+        "L L"
+    ],
+    "key": {
+        "S": {
+            "item": "asura_mod:stormsilver_ingot"
+        },
+        "Q": {
+            "item": "asura_mod:aether_quartz_shard"
+        },
+        "L": {
+            "item": "minecraft:leather"
+        },
+        "P": {
+            "item": "minecraft:phantom_membrane"
+        }
+    },
+    "result": {
+        "item": "asura_mod:stormsilver_cloak",
+        "count": 1
+    }
+}

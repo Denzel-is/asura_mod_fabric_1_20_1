@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LLL",
+        "LFL",
+        "LLL"
+    ],
+    "key": {
+        "L": {
+            "item": "asura_mod:lumen_pearl"
+        },
+        "F": {
+            "item": "asura_mod:starforged_frame"
+        }
+    },
+    "result": {
+        "item": "asura_mod:greater_lumen_pearl",
+        "count": 1
+    }
+}

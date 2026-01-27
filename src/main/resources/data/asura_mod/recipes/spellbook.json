@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AQA",
+        "QBQ",
+        "RQR"
+    ],
+    "key": {
+        "A": {
+            "item": "asura_mod:aether_quartz_shard"
+        },
+        "Q": {
+            "item": "minecraft:paper"
+        },
+        "B": {
+            "item": "minecraft:book"
+        },
+        "R": {
+            "item": "asura_mod:rune_dust"
+        }
+    },
+    "result": {
+        "item": "asura_mod:spellbook",
+        "count": 1
+    }
+}

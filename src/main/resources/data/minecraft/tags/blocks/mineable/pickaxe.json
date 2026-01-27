@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        "asura_mod:aether_quartz_ore",
+        "asura_mod:deepslate_aether_quartz_ore",
+        "asura_mod:runic_iron_ore",
+        "asura_mod:deepslate_runic_iron_ore",
+        "asura_mod:stormsilver_ore",
+        "asura_mod:cinder_opal_ore",
+        "asura_mod:void_salt_vein",
+        "asura_mod:lumen_bud"
+    ]
+}

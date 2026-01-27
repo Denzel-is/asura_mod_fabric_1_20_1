@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LFL",
+        "GPG",
+        "P P"
+    ],
+    "key": {
+        "L": {
+            "item": "asura_mod:lumen_pearl"
+        },
+        "F": {
+            "item": "asura_mod:starforged_frame"
+        },
+        "G": {
+            "item": "asura_mod:greater_lumen_pearl"
+        },
+        "P": {
+            "item": "minecraft:phantom_membrane"
+        }
+    },
+    "result": {
+        "item": "asura_mod:astral_cloak",
+        "count": 1
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:jigsaw",
+    "biomes": "#asura_mod:has_ember_forge",
+    "max_distance_from_center": 80,
+    "size": 1,
+    "start_height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+            "absolute": 80
+        },
+        "min_inclusive": {
+            "absolute": 32
+        }
+    },
+    "start_pool": "asura_mod:ember_forge/start",
+    "step": "surface_structures",
+    "spawn_overrides": {},
+    "terrain_adaptation": "none",
+    "use_expansion_hack": false
+}

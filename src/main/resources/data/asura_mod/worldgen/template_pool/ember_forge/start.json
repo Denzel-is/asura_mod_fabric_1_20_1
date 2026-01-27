@@ -1,0 +1,15 @@
+{
+    "name": "asura_mod:ember_forge/start",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "asura_mod:ember_forge/forge_main",
+                "processors": "minecraft:empty",
+                "projection": "rigid"
+            }
+        }
+    ]
+}

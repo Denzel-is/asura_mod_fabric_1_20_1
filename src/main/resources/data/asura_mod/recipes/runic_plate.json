@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RIR",
+        "I I",
+        "I I"
+    ],
+    "key": {
+        "R": {
+            "item": "asura_mod:runic_plate"
+        },
+        "I": {
+            "item": "asura_mod:runic_iron_ingot"
+        }
+    },
+    "result": {
+        "item": "asura_mod:runic_plate",
+        "count": 2
+    }
+}

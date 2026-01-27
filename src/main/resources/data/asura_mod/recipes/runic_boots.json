@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "I I",
+        "I I"
+    ],
+    "key": {
+        "I": {
+            "item": "asura_mod:runic_iron_ingot"
+        }
+    },
+    "result": {
+        "item": "asura_mod:runic_boots",
+        "count": 1
+    }
+}

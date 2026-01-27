@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "NNN",
+        "NNN",
+        "NNN"
+    ],
+    "key": {
+        "N": {
+            "item": "asura_mod:stormsilver_nugget"
+        }
+    },
+    "result": {
+        "item": "asura_mod:stormsilver_ingot",
+        "count": 1
+    }
+}

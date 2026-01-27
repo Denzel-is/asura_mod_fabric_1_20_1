@@ -5,8 +5,12 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.asura_mod.net.ModNetworking;
 import com.asura_mod.registry.ModBlocks;
 import com.asura_mod.registry.ModItems;
+import com.asura_mod.registry.ModItemGroups;
+import com.asura_mod.spell.nodes.BaseNodes;
+import com.asura_mod.spell.screen.ModScreenHandlers;
 import com.asura_mod.worldgen.ModWorldGen;
 
 public class Asura_mod implements ModInitializer {
@@ -27,8 +31,20 @@ public class Asura_mod implements ModInitializer {
 		ModBlocks.register();
 		ModItems.register();
 
+		// Register creative tabs (items visible in creative menu)
+		ModItemGroups.register();
+
 		// Register WorldGen (SPEC AG-03)
 		ModWorldGen.generateModWorldGen();
+
+		// Register spell nodes (SPELLBOOK_SPEC 2.2)
+		BaseNodes.register();
+
+		// Register screen handlers (SPELLBOOK_SPEC 2.6)
+		ModScreenHandlers.register();
+
+		// Register networking for Spellbook system (SPELLBOOK_SPEC 2.8)
+		ModNetworking.register();
 
 		LOGGER.info("Asura Mod initialized successfully!");
 	}
