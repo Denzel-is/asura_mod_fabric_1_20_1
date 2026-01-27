@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:ore",
+    "config": {
+        "size": 4,
+        "discard_chance_on_air_exposure": 0.0,
+        "targets": [
+            {
+                "target": {
+                    "predicate_type": "minecraft:block_match",
+                    "block": "minecraft:netherrack"
+                },
+                "state": {
+                    "Name": "asura_mod:void_salt_vein"
+                }
+            },
+            {
+                "target": {
+                    "predicate_type": "minecraft:block_match",
+                    "block": "minecraft:soul_sand"
+                },
+                "state": {
+                    "Name": "asura_mod:void_salt_vein"
+                }
+            },
+            {
+                "target": {
+                    "predicate_type": "minecraft:block_match",
+                    "block": "minecraft:soul_soil"
+                },
+                "state": {
+                    "Name": "asura_mod:void_salt_vein"
+                }
+            }
+        ]
+    }
+}

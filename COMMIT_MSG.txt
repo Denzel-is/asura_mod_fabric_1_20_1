@@ -1,0 +1,146 @@
+feat(AG-01, AG-02): Complete registry and models implementation
+
+## AG-01: Registry (Blocks & Items)
+
+### Java Classes Created:
+- `src/main/java/com/asura_mod/registry/ModBlocks.java`
+  * Registered 8 ore/resource blocks:
+    - Overworld: aether_quartz_ore, deepslate_aether_quartz_ore, runic_iron_ore, deepslate_runic_iron_ore, stormsilver_ore
+    - Nether: cinder_opal_ore, void_salt_vein
+    - End: lumen_bud (glowing crystal cluster)
+  * Auto-registration of BlockItems for all blocks
+  * Proper hardness, sound groups, and tool requirements per block type
+
+- `src/main/java/com/asura_mod/registry/ModItems.java`
+  * Registered 21 items across 4 tiers:
+    - T1 (Overworld): rune_dust, aether_quartz_shard
+    - T2 (Overworld): raw_runic_iron, runic_iron_ingot, stormsilver_nugget, stormsilver_ingot
+    - T3 (Nether): cinder_opal, void_salt
+    - T4 (End): lumen_pearl, greater_lumen_pearl, starforged_frame
+  * Structure loot items: leyline_catalyst, map_fragment_shrine, runic_plate, relic_scrap, heat_treated_core, wardened_ash, null_charm
+  * Smithing templates: cinder_upgrade_template, astral_upgrade_template (with full tooltip support)
+
+- `src/main/java/com/asura_mod/Asura_mod.java`
+  * Updated onInitialize() to call ModBlocks.register() and ModItems.register()
+  * Added imports for registry classes
+
+### Registry Stats:
+- 8 blocks registered
+- 21 items registered  
+- 29 total registry entries
+- All with proper rarity levels (COMMON/UNCOMMON/RARE/EPIC)
+
+---
+
+## AG-02: Models & Localization
+
+### JSON Models (37 files):
+- `src/main/resources/assets/asura_mod/models/item/*.json` (29 files)
+  * 21 standalone item models (minecraft:item/generated parent)
+  * 8 BlockItem models (reference block models)
+
+- `src/main/resources/assets/asura_mod/models/block/*.json` (8 files)
+  * 7 ore blocks (minecraft:block/cube_all parent)
+  * 1 lumen_bud (minecraft:block/cross parent for plant-like rendering)
+
+### Blockstates (8 files):
+- `src/main/resources/assets/asura_mod/blockstates/*.json`
+  * Simple variant blockstates for all 8 blocks
+  * No rotation mechanics (will add if needed later)
+
+### Localization (2 files):
+- `src/main/resources/assets/asura_mod/lang/en_us.json`
+  * Full English translations for all blocks, items
+  * Smithing template descriptions (applies_to, ingredients, slot descriptions)
+  * Upgrade names (cinder_upgrade, astral_upgrade)
+
+- `src/main/resources/assets/asura_mod/lang/ru_ru.json`
+  * Complete Russian localization (as requested in SPEC)
+  * Professional translations maintaining Minecraft style
+
+### Textures (29 files):
+#### Item Textures (21 files):
+- 6 AI-generated placeholder textures (high quality pixelart):
+  * rune_dust.png - cyan magical dust with sparkles
+  * aether_quartz_shard.png - pale blue crystal shard
+  * raw_runic_iron.png - brown-gray ore with rune symbols
+  * runic_iron_ingot.png - silver ingot with rune markings
+  * stormsilver_nugget.png - bright silver with lightning
+  * stormsilver_ingot.png - silver ingot with electric blue glow
+
+- 15 solid color placeholder textures (Python generated):
+  * T3-T4 materials with tier-appropriate colors
+  * Structure loot items with thematic colors
+  * All 16x16 PNG with proper transparency
+
+#### Block Textures (8 files):
+- Ore textures with colored veins on base stone:
+  * Stone ores: gray base (128,128,128) + colored ore veins
+  * Deepslate ores: dark gray base (64,64,64) + colored ore veins  
+  * Nether ores: netherrack base (112,48,32) + colored ore veins
+  * lumen_bud: purple crystal (147,112,219)
+
+### Helper Scripts:
+- `generate_textures.py` - Creates structure loot item textures
+- `generate_block_textures.py` - Creates ore block textures with veins
+
+---
+
+## Documentation Files:
+- `docs/TASKS.md` - Task tracker with AG-01 through AG-07 breakdown
+- `docs/CHANGELOG.md` - Requirements change log
+- `docs/JAVA17_SETUP.md` - Java 17 installation guide
+- `docs/TEXTURE_REQUIREMENTS.md` - Comprehensive texture location and improvement guide
+
+---
+
+## Project Structure:
+```
+asura_mod_1.20.1/
+├── src/
+│   ├── main/
+│   │   ├── java/com/asura_mod/
+│   │   │   ├── Asura_mod.java (MODIFIED)
+│   │   │   └── registry/
+│   │   │       ├── ModBlocks.java (NEW)
+│   │   │       └── ModItems.java (NEW)
+│   │   └── resources/
+│   │       └── assets/asura_mod/
+│   │           ├── blockstates/ (8 files)
+│   │           ├── models/
+│   │           │   ├── block/ (8 files)
+│   │           │   └── item/ (29 files)
+│   │           ├── textures/
+│   │           │   ├── block/ (8 PNG files)
+│   │           │   └── item/ (21 PNG files)
+│   │           └── lang/
+│   │               ├── en_us.json
+│   │               └── ru_ru.json
+│   └── client/ (unchanged)
+└── docs/
+    ├── TASKS.md
+    ├── CHANGELOG.md
+    ├── JAVA17_SETUP.md
+    └── TEXTURE_REQUIREMENTS.md
+```
+
+---
+
+## Testing Status:
+⚠️ **Build blocked**: Requires Java 17 (system has Java 8)
+✅ **Code complete**: All registry and model files created
+✅ **Localization**: Both EN and RU complete
+✅ **Textures**: All placeholders in place (ready for improvement)
+
+## Next Steps:
+1. User installs Java 17
+2. Run `gradlew clean build` to verify
+3. Launch game and test `/give @s asura_mod:<item>` commands
+4. User can improve textures per `docs/TEXTURE_REQUIREMENTS.md`
+5. Proceed to AG-03 (Worldgen JSON)
+
+---
+
+**Related to SPEC sections**: 3.1, 3.2, 3.3, and AG-01/AG-02 implementation plans
+**Files changed**: 93 new files, 1 modified file
+**Total lines of code**: ~800 lines (Java) + ~500 lines (JSON)

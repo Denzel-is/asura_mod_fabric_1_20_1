@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import com.asura_mod.registry.ModBlocks;
 import com.asura_mod.registry.ModItems;
+import com.asura_mod.worldgen.ModWorldGen;
 
 public class Asura_mod implements ModInitializer {
 	public static final String MOD_ID = "asura_mod";
@@ -25,6 +26,9 @@ public class Asura_mod implements ModInitializer {
 		// Register blocks and items (SPEC AG-01)
 		ModBlocks.register();
 		ModItems.register();
+
+		// Register WorldGen (SPEC AG-03)
+		ModWorldGen.generateModWorldGen();
 
 		LOGGER.info("Asura Mod initialized successfully!");
 	}
