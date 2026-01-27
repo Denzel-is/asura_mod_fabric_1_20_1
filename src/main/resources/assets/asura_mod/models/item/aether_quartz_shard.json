@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "asura_mod:item/aether_quartz_shard"
+    }
+}

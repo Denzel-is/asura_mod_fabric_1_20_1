@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "asura_mod:block/deepslate_runic_iron_ore"
+    }
+}
