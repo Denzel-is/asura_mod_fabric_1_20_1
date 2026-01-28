@@ -77,15 +77,14 @@ public class SpellValidator {
             }
         }
 
-        // TODO: Add more validation rules (cycles, type compatibility, etc.)
+        // Future validation improvements: cycle detection, type compatibility checks,
+        // max node limits, input/output port validation, etc.
 
         if (!errors.isEmpty()) {
             return new ValidationResult(errors, warnings, 0, 0, false);
         }
 
-        // Calculate cooldown based on cost (simple formula for MVP)
-        int cooldownTicks = (int) (totalCost * 10); // 0.5 sec per 1 cost unit
-
-        return new ValidationResult(errors, warnings, totalCost, cooldownTicks, true);
+        // Calculate cooldown based on cost (simple formula: 0.5 sec per 1 cost unit)
+        return new ValidationResult(errors, warnings, totalCost, (int) (totalCost * 10), true);
     }
 }

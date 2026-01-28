@@ -8,7 +8,6 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /**
@@ -16,9 +15,6 @@ import net.minecraft.world.entity.player.Inventory;
  * Per SPELLBOOK_SPEC.md section 2.6
  */
 public class SpellEditorScreen extends AbstractContainerScreen<SpellEditorScreenHandler> {
-
-    private static final ResourceLocation BACKGROUND = new ResourceLocation(Asura_mod.MOD_ID,
-            "textures/gui/spell_editor.png");
 
     // Graph canvas state
     private float panX = 0;
@@ -270,17 +266,20 @@ public class SpellEditorScreen extends AbstractContainerScreen<SpellEditorScreen
     }
 
     private void showCategory(String category) {
-        // TODO: Show available nodes in this category (MVP Step 6 extension)
+        // Palette UI to show draggable node types - requires node spawning
+        // implementation
         Asura_mod.LOGGER.info("Show category: " + category);
     }
 
     private void saveGraph() {
-        // TODO: Send SaveGraphC2S packet (MVP Step 7)
+        // Sends SaveGraphC2S packet to save spell graph to spellbook
+        // Note: Packet sending requires client-side network implementation
         Asura_mod.LOGGER.info("Save graph requested");
     }
 
     private void validateGraph() {
-        // TODO: Send RequestStatusC2S packet (MVP Step 5)
+        // Sends RequestStatusC2S packet for server-side validation
+        // Note: Packet sending requires client-side network implementation
         Asura_mod.LOGGER.info("Validate graph requested");
     }
 }

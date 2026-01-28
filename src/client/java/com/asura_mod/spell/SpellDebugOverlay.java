@@ -2,7 +2,6 @@ package com.asura_mod.spell;
 
 import com.asura_mod.Asura_mod;
 import com.asura_mod.item.StaffItem;
-import com.asura_mod.registry.ModItems;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;

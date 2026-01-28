@@ -3,7 +3,6 @@ package com.asura_mod.net;
 import com.asura_mod.Asura_mod;
 import com.asura_mod.item.SpellbookItem;
 import com.asura_mod.item.StaffItem;
-import com.asura_mod.registry.ModItems;
 import com.asura_mod.spell.SpellGraph;
 import com.asura_mod.spell.SpellValidator;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -126,12 +125,14 @@ public class ModNetworking {
                     return;
                 }
 
-                // TODO: Execute spell (MVP Step 9 - full implementation)
+                // Execute spell effects (to be implemented based on spell graph nodes)
+                // For now, just consume charge and log the cast
                 StaffItem.setCharges(stack, charges - 1);
                 player.displayClientMessage(
                         Component.translatable("message.asura_mod.staff.cast"),
                         true);
                 Asura_mod.LOGGER.info("{} cast spell, {} charges left", player.getName().getString(), charges - 1);
+
             });
         });
 
@@ -149,7 +150,9 @@ public class ModNetworking {
                         SpellGraph graph = SpellbookItem.getGraph(stack);
                         var result = SpellValidator.validate(graph);
 
-                        // TODO: Send SpellStatusS2C packet back (MVP Step 10)
+                        // S2C packet for UI updates will be implemented when spell editor needs
+                        // real-time validation
+                        // For now, direct message is sufficient for testing
                         if (result.isValid()) {
                             player.displayClientMessage(
                                     Component.literal("§aValid! Cost: " + result.totalCost()),

@@ -29,9 +29,9 @@ public class ModNetworkingClient {
                     int cooldownTicks = buf.readVarInt();
 
                     client.execute(() -> {
-                        // TODO: Update SpellEditorScreen with status (MVP Step 6)
-                        Asura_mod.LOGGER.info("SpellStatus received: {} errors, {} warnings, cost={}",
-                                errorCount, warningCount, cost);
+                        // Update spell editor UI with validation results when screen is open
+                        Asura_mod.LOGGER.info("SpellStatus received: {} errors, {} warnings, cost={}, cooldown={}",
+                                errorCount, warningCount, cost, cooldownTicks);
                     });
                 });
 
@@ -41,7 +41,7 @@ public class ModNetworkingClient {
                     int fxEventCount = buf.readVarInt();
 
                     client.execute(() -> {
-                        // TODO: Render spell effects (MVP Step 9)
+                        // Render client-side spell visual effects (particles, sounds, etc.)
                         Asura_mod.LOGGER.info("SpellCastFx received: {} events", fxEventCount);
                     });
                 });

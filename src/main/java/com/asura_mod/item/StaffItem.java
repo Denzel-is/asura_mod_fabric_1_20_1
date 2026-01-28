@@ -2,12 +2,16 @@ package com.asura_mod.item;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,6 +28,9 @@ import java.util.List;
  * - ImprintedGraph (Compound) - the spell graph
  * - ImprintedName (String) - spell name/theme
  * - ImprintHash (Int) - quick change check
+ * 
+ * NOTE: Uses trident-like pose but DOES NOT throw projectiles.
+ * This is achieved by extending Item and preventing throw behavior.
  */
 public class StaffItem extends Item {
 
@@ -52,13 +59,50 @@ public class StaffItem extends Item {
         }
 
         if (!level.isClientSide) {
-            // TODO: Send CastSpellC2S packet (MVP Step 9)
-            player.displayClientMessage(
-                    Component.translatable("message.asura_mod.staff.cast_placeholder"),
-                    true);
+            // Play sound effect
+            level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                    SoundEvents.EVOKER_CAST_SPELL, SoundSource.PLAYERS,
+                    1.0F, 1.0F);
+
+            // Cast spell - networking handled server-side automatically since this runs on
+            // server
+            // Consume charges
+            int charges = getCharges(stack);
+            if (charges > 0) {
+                setCharges(stack, charges - 1);
+                // Spell execution happens here (placeholder for future spell effects)
+                player.displayClientMessage(
+                        Component.translatable("message.asura_mod.staff.cast"),
+                        true);
+            } else {
+                player.displayClientMessage(
+                        Component.translatable("message.asura_mod.staff.no_charges"),
+                        true);
+            }
+
+            // Increment use stat
+            player.awardStat(Stats.ITEM_USED.get(this));
         }
 
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
+    }
+
+    /**
+     * Returns the animation to use when this item is being used.
+     * Using SPEAR (trident) animation for the staff pose.
+     */
+    @Override
+    public UseAnim getUseAnimation(ItemStack stack) {
+        return UseAnim.SPEAR;
+    }
+
+    /**
+     * How long it takes to use or consume an item.
+     * Set to max value to prevent throwing.
+     */
+    @Override
+    public int getUseDuration(ItemStack stack) {
+        return 72000;
     }
 
     /**
