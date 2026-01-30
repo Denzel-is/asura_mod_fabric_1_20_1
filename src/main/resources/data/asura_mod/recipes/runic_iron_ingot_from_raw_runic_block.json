@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "asura_mod:raw_runic_block"
+        }
+    ],
+    "result": {
+        "item": "asura_mod:runic_iron_ingot",
+        "count": 9
+    }
+}

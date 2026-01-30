@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "asura_mod:runic_iron_ingot"
+        }
+    },
+    "result": {
+        "item": "asura_mod:raw_runic_block",
+        "count": 1
+    }
+}

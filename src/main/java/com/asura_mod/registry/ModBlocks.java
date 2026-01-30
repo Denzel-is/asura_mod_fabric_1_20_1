@@ -58,6 +58,12 @@ public class ModBlocks {
                                         .lightLevel(state -> 8)
                                         .noOcclusion()));
 
+        // STORAGE BLOCKS
+        public static final Block RAW_RUNIC_BLOCK = registerBlock("raw_runic_block",
+                        new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)
+                                        .sound(SoundType.METAL)
+                                        .requiresCorrectToolForDrops()));
+
         /**
          * Register a block with automatic BlockItem registration
          */

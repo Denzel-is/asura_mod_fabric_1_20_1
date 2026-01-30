@@ -90,6 +90,7 @@ public class ModItemGroups {
                         entries.accept(ModBlocks.CINDER_OPAL_ORE);
                         entries.accept(ModBlocks.VOID_SALT_VEIN);
                         entries.accept(ModBlocks.LUMEN_BUD);
+                        entries.accept(ModBlocks.RAW_RUNIC_BLOCK);
                     })
                     .build());
 
@@ -146,6 +147,7 @@ public class ModItemGroups {
             entries.accept(ModBlocks.CINDER_OPAL_ORE);
             entries.accept(ModBlocks.VOID_SALT_VEIN);
             entries.accept(ModBlocks.LUMEN_BUD);
+            entries.accept(ModBlocks.RAW_RUNIC_BLOCK);
         });
     }
 }
